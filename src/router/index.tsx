@@ -18,6 +18,8 @@ import { SingleRecipePage } from "../pages/SingleRecipePage";
 import { QuizHubPage } from "../pages/QuizHubPage";
 import { GenericQuizPage } from "../pages/GenericQuizPage"; // La página plantilla para cualquier quiz
 
+import { Analytics } from '@vercel/analytics/react';
+
 // Definimos el mapa completo de nuestro sitio web.
 const router = createBrowserRouter([
   // --- RUTAS PRINCIPALES ---
@@ -47,5 +49,10 @@ const router = createBrowserRouter([
 // Este es el componente que envuelve toda la lógica del router.
 // Se importa en App.tsx para activar la navegación en todo el sitio.
 export function AppRouter() {
-  return <RouterProvider router={router} />;
+  return (
+    <> {/* Envolvemos en un Fragmento */}
+      <RouterProvider router={router} />
+      <Analytics /> {/* <-- PASO 2.2: AÑADIR EL COMPONENTE */}
+    </>
+  );
 }
