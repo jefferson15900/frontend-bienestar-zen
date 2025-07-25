@@ -28,7 +28,7 @@ export function SingleRecipePage() {
       setError(null);
       try {
         // --- LLAMADA A LA API CORREGIDA ---
-        const response = await fetch(`https://bienestar-zen-api.onrender.com/api/recipes/${slug}`); // <-- RUTA CORREGIDA A PLURAL
+       const response = await fetch(`https://backend-bienestar-zen.onrender.com/api/recipes/${slug}`);
         if (!response.ok) {
           throw new Error("Receta no encontrada o error en el servidor.");
         }
